@@ -251,7 +251,7 @@
       coach.textContent = '👃 Мұрныңмен баяу дем ал'; await say('Мұрныңмен баяу дем ал');
       if (!Eng.alive(E)) return null;
       const t0 = performance.now();
-      while (performance.now() - t0 < 3800) { if (!Eng.alive(E)) return null; await frame(); }
+      while (performance.now() - t0 < 2800) { if (!Eng.alive(E)) return null; await frame(); }
       phase = 'exhale'; coach.textContent = '😮‍💨 Ауызбен жай шығар'; await say('Енді ауызбен жай шығар');
       if (!Eng.alive(E)) return null;
       const sorted = [...base].sort((a, b) => a - b);
@@ -264,8 +264,8 @@
         const lv = holding ? 1 : level;
         const good = holding || lv > thr, strong = !holding && micOk && lv > Math.max(thr * 8, 0.4);
         if (strong) { p = Math.max(0, p - dt * 0.08); coach.textContent = '🪶 Жайырақ! Баяу шығар'; warned = now; }
-        else if (good) { p = Math.min(1, p + dt / 3.2); if (now - warned > 800) coach.textContent = '😮‍💨 Жарайсың, жалғастыр!'; }
-        else p = Math.max(0, p - dt / 12);
+        else if (good) { p = Math.min(1, p + dt / 1.8); if (now - warned > 800) coach.textContent = '😮‍💨 Жарайсың, жалғастыр!'; }
+        else p = Math.max(0, p - dt / 25);
         sc.update(scene, p, round, ex.rounds); prog.style.width = p * 100 + '%';
         if (p >= 1) return true;
       }
